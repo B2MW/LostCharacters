@@ -7,6 +7,7 @@
 //
 
 #import "MasterViewController.h"
+#import "LostCharacterCell.h"
 
 @interface MasterViewController() <UITableViewDelegate>
 @property NSArray *characters;
@@ -27,7 +28,6 @@
     //Handle initial core data load
     [self loadSavedCharacters];
     [self checkForDefaultLoad];
-    [self updateCoreData];
 }
 
 #pragma mark - Check for Existing Characters
@@ -37,7 +37,6 @@
     NSArray *files = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
     return files.firstObject;
 }
-
 - (void)checkForDefaultLoad
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -49,17 +48,13 @@
 }
 
 #pragma mark - Manage Core Data Updates
--(void)updateCoreData
-{
-//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"character"];
-
-
-//    self.characters = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
-}
-
 -(void)loadSavedCharacters
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Character"];
+    NSSortDescriptor *byPassengerName = [NSSortDescriptor sortDescriptorWithKey:@"passenger" ascending:YES];
+
+    request.sortDescriptors = [NSArray arrayWithObjects:byPassengerName, nil];
+
     self.characters = [self.managedObjectContext executeFetchRequest:request error:nil];
     [self.tableView reloadData];
 }
@@ -99,13 +94,19 @@
     return self.characters.count;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(LostCharacterCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    LostCharacterCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     NSManagedObject *character = [self.characters objectAtIndex:indexPath.row];
 
-    cell.textLabel.text = [character valueForKey:@"actor"];
-    cell.detailTextLabel.text = [character valueForKey:@"passenger"];
+    cell.passenger.text = [character valueForKey:@"passenger"];
+    cell.actor.text = [NSString stringWithFormat:@"Played by: %@", [character valueForKey:@"actor"]];
+
+//    cell.planeSeat.text = ;
+//    cell.age.text = ;
+//    cell.hairColor = ;
+//    cell.greatestFear = ;
+//    cell.greatestWish = ;
 
     return cell;
 }

@@ -16,6 +16,8 @@
 		4CF7BCEB19F6DCDB009ED828 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF7BCEA19F6DCDB009ED828 /* Images.xcassets */; };
 		4CF7BCEE19F6DCDB009ED828 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF7BCEC19F6DCDB009ED828 /* LaunchScreen.xib */; };
 		4CF7BCFA19F6DCDB009ED828 /* LostCharactersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7BCF919F6DCDB009ED828 /* LostCharactersTests.m */; };
+		4CF7BD0519F7092F009ED828 /* LostCharacterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7BD0419F7092F009ED828 /* LostCharacterCell.m */; };
+		4CF7BD0819F712D7009ED828 /* AddLostCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7BD0719F712D7009ED828 /* AddLostCharacterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,10 @@
 		4CF7BCF319F6DCDB009ED828 /* LostCharactersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LostCharactersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF7BCF819F6DCDB009ED828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CF7BCF919F6DCDB009ED828 /* LostCharactersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LostCharactersTests.m; sourceTree = "<group>"; };
+		4CF7BD0319F7092F009ED828 /* LostCharacterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LostCharacterCell.h; sourceTree = "<group>"; };
+		4CF7BD0419F7092F009ED828 /* LostCharacterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LostCharacterCell.m; sourceTree = "<group>"; };
+		4CF7BD0619F712D7009ED828 /* AddLostCharacterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLostCharacterViewController.h; sourceTree = "<group>"; };
+		4CF7BD0719F712D7009ED828 /* AddLostCharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddLostCharacterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,10 @@
 				4CF7BCE419F6DCDB009ED828 /* DetailViewController.h */,
 				4CF7BCE519F6DCDB009ED828 /* DetailViewController.m */,
 				4CF7BCE719F6DCDB009ED828 /* Main.storyboard */,
+				4CF7BD0619F712D7009ED828 /* AddLostCharacterViewController.h */,
+				4CF7BD0719F712D7009ED828 /* AddLostCharacterViewController.m */,
+				4CF7BD0319F7092F009ED828 /* LostCharacterCell.h */,
+				4CF7BD0419F7092F009ED828 /* LostCharacterCell.m */,
 				4CF7BCEA19F6DCDB009ED828 /* Images.xcassets */,
 				4CF7BCEC19F6DCDB009ED828 /* LaunchScreen.xib */,
 				4CF7BCDE19F6DCDB009ED828 /* LostCharacters.xcdatamodeld */,
@@ -228,8 +238,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CF7BCE619F6DCDB009ED828 /* DetailViewController.m in Sources */,
+				4CF7BD0819F712D7009ED828 /* AddLostCharacterViewController.m in Sources */,
 				4CF7BCE319F6DCDB009ED828 /* MasterViewController.m in Sources */,
 				4CF7BCE019F6DCDB009ED828 /* LostCharacters.xcdatamodeld in Sources */,
+				4CF7BD0519F7092F009ED828 /* LostCharacterCell.m in Sources */,
 				4CF7BCDD19F6DCDB009ED828 /* AppDelegate.m in Sources */,
 				4CF7BCDA19F6DCDB009ED828 /* main.m in Sources */,
 			);
