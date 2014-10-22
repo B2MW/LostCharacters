@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface AddLostCharacterViewController : UIViewController
-
+@property NSManagedObjectContext *character;
 @end

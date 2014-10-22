@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "LostCharacterCell.h"
+#import "AddLostCharacterViewController.h"
 
 @interface MasterViewController() <UITableViewDelegate>
 @property NSArray *characters;
@@ -109,6 +110,12 @@
 //    cell.greatestWish = ;
 
     return cell;
+}
+
+- (IBAction)unwindCharacterAddSegue:(UIStoryboardSegue *)segue
+{
+    [self loadCharacterListFromWeb];
+    [self.tableView reloadData];
 }
 
 
